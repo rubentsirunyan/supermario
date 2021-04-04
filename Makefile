@@ -9,7 +9,6 @@ workspaces: init
 plan: workspaces
 	cd terraform && terraform workspace select $(ENV)
 	cd terraform && terraform plan -out $(TFPLAN)
-	cd terraform && terraform show $(TFPLAN)
 
 deploy: plan
 	cd terraform && terraform workspace select $(ENV)
