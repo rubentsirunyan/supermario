@@ -1,0 +1,10 @@
+- hosts: 'localhost'
+  tasks:
+    - name: 'Check if the URL is reachable'
+      uri:
+        url: '{{ endpoint }}'
+        method: 'GET'
+      register: '_result'
+      until: '_result.status == 200'
+      retries: 10
+      delay: 5
