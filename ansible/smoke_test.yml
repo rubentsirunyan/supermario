@@ -6,5 +6,5 @@
         method: 'GET'
       register: '_result'
       until: '_result.status == 200'
-      retries: 10
+      retries: 20
       delay: 5
